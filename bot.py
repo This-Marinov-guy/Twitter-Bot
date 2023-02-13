@@ -25,14 +25,14 @@ def limit_handle(cursor):
     except tweepy.RateLimitError:
       time.sleep(1000)
 
-#Be nice to your followers. Follow everyone!
+#Follow BAck everyone everyone!
 for follower in limit_handle(tweepy.Cursor(api.followers).items()):
   if follower.name == 'Usernamehere':
     print(follower.name)
     follower.follow()
 
 
-# Be a narcisist and love your own tweets. or retweet anything with a keyword!
+#love your own tweets. or retweet anything with a keyword!
 for tweet in tweepy.Cursor(api.search, search).items(numberOfTweets):
     try:
         tweet.favorite()
